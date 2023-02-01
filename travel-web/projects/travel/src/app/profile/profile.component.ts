@@ -51,13 +51,14 @@ export class ProfileComponent implements OnInit {
   }
 
   changeAvatar() {
-    const imagesValue = (this.profileForm.value.avatar as any).replace('C:\\fakepath\\', '');
+    alert("tính năng đang phát triển")
+    const imagesValue = ''
     this.imageAvatar = imagesValue;
     this.cd.detectChanges();
   }
 
   submitProfile() {
-    const imagesValue = (this.profileForm.value.avatar as any).replace('C:\\fakepath\\', '');
+    const imagesValue = ''
     this.customerService.updateCustomer({...this.profileForm.value, avatar: imagesValue}).subscribe((data: any) => {
       if(data.message) {
         this.toastrService.success(JSON.stringify(data.message));

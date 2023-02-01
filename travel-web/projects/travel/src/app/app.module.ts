@@ -21,6 +21,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BookingComponent } from './booking/booking.component';
 import { PaymentComponent } from './payment/payment.component';
+import { PolicyComponent } from './policy/policy.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { PaymentComponent } from './payment/payment.component';
     ProfileComponent,
     BookingComponent,
     PaymentComponent,
+    PolicyComponent,
   ],
   imports: [
     BrowserModule,

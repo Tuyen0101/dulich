@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { TourDetailComponent } from './tour-detail/tour-detail.component';
 import { TourListComponent } from './tour-list/tour-list.component';
 import {PaymentComponent} from "./payment/payment.component";
+import {PolicyComponent} from "./policy/policy.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'booking', component: BookingComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'payment', component: PaymentComponent },
+      { path: 'policy', component: PolicyComponent },
       { path: '',   redirectTo: 'home', pathMatch: 'full' },
     ]
   },

@@ -89,7 +89,7 @@ export class BookingComponent implements OnInit {
         console.log(this.paymentId)
         this.toastrService.success(JSON.stringify(res.message));
         if(this.paymentId == 1){
-          this.router.navigate(['home']);
+          this.router.navigate(['payment']);
         }else
           this.router.navigate(['payment']);
       }
