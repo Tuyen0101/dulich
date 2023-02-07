@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import {ActivatedRoute, NavigationExtras, Params, Router} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BookingService, CustomerService, TourService } from 'projects/global/services';
 
@@ -87,11 +87,13 @@ export class BookingComponent implements OnInit {
     }).subscribe((res: any) => {
       if(res.status) {
         console.log(this.paymentId)
+        const bookingId = res.detail.bookingId
+        console.log(bookingId)
         this.toastrService.success(JSON.stringify(res.message));
         if(this.paymentId == 1){
-          this.router.navigate(['payment']);
+          this.router.navigate([`payment/${bookingId}`],);
         }else
-          this.router.navigate(['payment']);
+          this.router.navigate([`payment/${bookingId}`]);
       }
     })
   }

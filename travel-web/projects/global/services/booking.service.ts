@@ -17,6 +17,10 @@ export class BookingService {
     return this.http.get(`${environment.apiUrl}api/getOneBooking/${bookingId}`);
   }
 
+  getBookingsByCustomer(customerId: any) {
+    return this.http.get(`${environment.apiUrl}api/getBookingsByCustomer/${customerId}`);
+  }
+
   createBooking(data: any) {
     return this.http.post(`${environment.apiUrl}api/createBooking`, data);
   }

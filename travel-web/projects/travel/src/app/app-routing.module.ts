@@ -13,6 +13,7 @@ import { TourDetailComponent } from './tour-detail/tour-detail.component';
 import { TourListComponent } from './tour-list/tour-list.component';
 import {PaymentComponent} from "./payment/payment.component";
 import {PolicyComponent} from "./policy/policy.component";
+import {MyBookingComponent} from "./my-booking/my-booking.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -29,8 +30,9 @@ const routes: Routes = [
       { path: 'news-detail', component: NewsDetailComponent },
       { path: 'booking', component: BookingComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 'payment', component: PaymentComponent },
+      { path: 'payment/:bookingId', component: PaymentComponent },
       { path: 'policy', component: PolicyComponent },
+      { path: 'my-booking', component: MyBookingComponent },
       { path: '',   redirectTo: 'home', pathMatch: 'full' },
     ]
   },

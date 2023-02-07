@@ -1,33 +1,103 @@
 <main id="content" class="site-main">
   <!-- Inner Banner html start-->
-  <section class="inner-banner-wrap">
+  <section class="">
     <div class="inner-baner-container py-20" style="background-image: url(../../assets/images/inner-banner.jpg);">
-<!--      <div class="container">-->
-<!--        <div class="inner-banner-content">-->
-<!--          <h1 class="inner-title text-8xl font-bold">Thanh toán</h1>-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
     <div class="inner-shape"></div>
   </section>
-  <!-- Inner Banner html end-->
-  <!-- contact form html start -->
   <h1 class="text-xl-center text-[28px] font-semibold">Đặt chuyến đi thành công</h1><br>
-  <div class="col-lg-6 justify-center m-auto pb-16">
+  <div class="col-lg-8 justify-center m-auto">
       <div>
         <aside class="sidebar">
           <div class="widget-bg widget-table-summary">
-            <h4 class="bg-title mb-0">Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ Travele của chúng tôi</h4>
-            <h4 class="bg-title mb-0">Hệ thống đang lên lịch cho chuyến đi của bạn. Đội ngũ CSKH của chúng tôi sẽ liên lạc với bạn để xác nhận thông tin.</h4>
-            <h4 class="bg-title mb-0">Xin vui lòng tham khảo chính sách thanh toán của chúng tôi bằng cách click vào nút dưới đây.</h4>
+            <h4 class="bg-title mb-0">Thông tin chuyến đi</h4>
+<!--            <h4 class="bg-title mb-0">Hệ thống đang lên lịch cho chuyến đi của bạn. Đội ngũ CSKH của chúng tôi sẽ liên lạc với bạn để xác nhận thông tin.</h4>-->
+<!--            <h4 class="bg-title mb-0">Xin vui lòng tham khảo chính sách thanh toán của chúng tôi bằng cách click vào nút dưới đây.</h4>-->
+            <div class="modal-body relative p-4 flex gap-10 justify-center">
+              <div>
+                <div class="flex w-full justify-between gap-20">
+                  <div class="w-full">
+                    <h3 class="font-bold">Thông tin khách hàng</h3>
+                    <table class="table">
+                      <tbody>
+                      <tr>
+                        <td>Họ</td>
+                        <td>{{profile?.lastName}}</td>
+                      </tr>
+                      <tr>
+                        <td>Tên</td>
+                        <td>{{profile?.firstName}}</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>{{account?.email}}</td>
+                      </tr>
+                      <tr>
+                        <td>Số điện thoại</td>
+                        <td>{{profile?.phone}}</td>
+                      </tr>
+                      <tr>
+                        <td>Địa chỉ</td>
+                        <td>{{profile?.address}}</td>
+                      </tr>
+                      <tr>
+                        <td>Năm sinh</td>
+                        <td>{{profile?.dob | date: 'dd/MM/yyyy'}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="w-full">
+                    <div class="">
+                    <h3 class="font-bold">Thông tin Tour</h3>
+                    <table class="table">
+                      <tbody>
+                      <tr>
+                        <td>Khách hàng</td>
+                        <td>Giá tiền / 1 người</td>
+                        <td>Số người</td>
+                        <td>Tổng tiền</td>
+                      </tr>
+                      <tr>
+                        <td>Người lớn</td>
+                        <td>{{tour?.priceAdult | number: '1.0-0'}}đ</td>
+                        <td>{{bookingDetail?.numberAdult}}</td>
+                        <td>{{bookingDetail?.numberAdult * tour?.priceAdult | number: '1.0-0'}}đ</td>
+                      </tr>
+                      <tr>
+                        <td>Trẻ em</td>
+                        <td>{{tour?.priceChildren | number: '1.0-0'}}đ</td>
+                        <td>{{bookingDetail?.numberChildren}}</td>
+                        <td>{{bookingDetail?.numberChildren * tour?.priceChildren | number: '1.0-0'}}đ</td>
+                      </tr>
+                      <tr>
+                        <td>Trẻ sơ sinh</td>
+                        <td>{{tour?.priceInfant | number: '1.0-0'}}đ</td>
+                        <td>{{bookingDetail?.numberInfant}}</td>
+                        <td>{{bookingDetail?.numberInfant * tour?.priceInfant | number: '1.0-0'}}đ</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <div class="font-bold text-xl">Tổng tiền: {{booking?.totalPrice | number: '1.0-0'}}đ</div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <button
-            type="submit" routerLink="/policy"
-            class="inline-block px-7 py-3 bg-red-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 ansition duration-150 ease-in-out w-full"
+          <div class="w-full flex justify-center">
 
-          >
-            Chính sách thanh toán
-          </button>
+            <button
+              (click)="thanhToan()"
+              type="submit"
+              class="inline-block px-7 py-3 bg-red-400 text-white font-medium text-sm leading-snug uppercase rounded
+            shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0
+            ansition duration-150 ease-in-out w-[400px]"
+
+            >
+              Thanh toán trực tiếp
+            </button>
+          </div>
         </aside>
       </div><br><br>
   </div>
